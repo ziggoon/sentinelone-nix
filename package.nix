@@ -10,12 +10,12 @@
   gcc-unwrapped,
 }:
 let
-  sentinelOnePackage = "SentinelAgent-Linux-24-3-3-1-x86-64-release-24-3-3_linux_x86_64_v24_3_3_1.deb";
+  sentinelOnePackage = "s1.deb";
 in
 stdenv.mkDerivation {
   pname = "sentinelone";
-  version = "24.3.3.1";
-  src = ./. + "/${sentinelOnePackage}";  # Changed to use local file
+  version = "24.1.3.8";
+  src = ./. + "/${sentinelOnePackage}";
   unpackPhase = ''
     runHook preUnpack
     dpkg-deb -x $src .
